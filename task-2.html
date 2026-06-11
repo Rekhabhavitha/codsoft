@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Modern Startup Landing Page</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+header h1{
+    font-size:28px;
+    font-weight:700;
+    color:#38bdf8;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 50px;
+    background:
+    radial-gradient(circle at top,#2563eb 0%,#0f172a 60%);
+}
+
+.hero-content{
+    animation:slideUp 1.2s ease;
+}
+
+.hero h2{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:1.1rem;
+    opacity:.85;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    background:linear-gradient(45deg,#38bdf8,#0ea5e9);
+    color:#000;
+    font-weight:700;
+    transition:.4s;
+    box-shadow:0 0 25px rgba(56,189,248,.5);
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.05);
+    background:white;
+}
+
+section{
+    padding:100px 8%;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:2.5rem;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px;
+    padding:30px;
+    transition:.4s;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    border-color:#38bdf8;
+    box-shadow:0 10px 35px rgba(56,189,248,.3);
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    opacity:0.9;
+}
+
+.icon{
+    width:50px;
+    height:50px;
+    fill:#38bdf8;
+    margin-bottom:15px;
+}
+
+.about{
+    text-align:center;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+    font-size:1.05rem;
+}
+
+.stats{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    margin-top:40px;
+}
+
+.stat{
+    background:rgba(255,255,255,0.08);
+    padding:25px;
+    min-width:180px;
+    border-radius:15px;
+    backdrop-filter:blur(10px);
+}
+
+.stat h3{
+    color:#38bdf8;
+    font-size:2rem;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact form{
+    max-width:600px;
+    margin:auto;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:15px;
+    margin:12px 0;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    background:#1e293b;
+    color:white;
+}
+
+textarea{
+    height:140px;
+    resize:none;
+}
+
+button{
+    padding:14px 35px;
+    border:none;
+    border-radius:50px;
+    background:#38bdf8;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    background:white;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#020617;
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        padding:15px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h2{
+        font-size:2.4rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    section{
+        padding:80px 20px;
+    }
+
+    .stats{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Landingpage</h1>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h2>Build Modern Websites</h2>
+
+        <p>
+            Create stunning, responsive, and professional landing pages
+            using HTML & CSS with modern UI design and smooth animations.
+        </p>
+
+        <a href="#services" class="btn">Explore More</a>
+    </div>
+</section>
+
+<section id="services">
+
+    <h2>Our Features</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M3 3h18v18H3V3zm2 2v14h14V5H5z"/>
+            </svg>
+
+            <h3>Responsive Design</h3>
+
+            <p>
+                Works perfectly on mobile, tablet and desktop devices.
+            </p>
+        </div>
+
+        <div class="card">
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/>
+            </svg>
+
+            <h3>Modern UI</h3>
+
+            <p>
+                Clean and professional interface with smooth animations.
+            </p>
+        </div>
+
+        <div class="card">
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M13 2L3 14h7v8l10-12h-7z"/>
+            </svg>
+
+            <h3>Fast Performance</h3>
+
+            <p>
+                Optimized code structure for better speed and efficiency.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="about" class="about">
+
+    <h2>About This Project</h2>
+
+    <p>
+        This landing page demonstrates HTML and CSS concepts such as
+        Flexbox, Grid Layout, Responsive Design, Animations, Glassmorphism,
+        and Modern User Interface techniques.
+    </p>
+
+    <div class="stats">
+
+        <div class="stat">
+            <h3>100%</h3>
+            <p>Responsive</p>
+        </div>
+
+        <div class="stat">
+            <h3>3+</h3>
+            <p>Sections</p>
+        </div>
+
+        <div class="stat">
+            <h3>0</h3>
+            <p>Errors</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact" class="contact">
+
+    <h2>Contact Us</h2>
+
+    <p>Feel free to send us a message.</p>
+
+    <form>
+        <input type="text" placeholder="Your Name" required>
+
+        <input type="email" placeholder="Your Email" required>
+
+        <textarea placeholder="Your Message"></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+</section>
+
+<footer>
+    © 2026 DevLanding | Built with HTML & CSS
+</footer>
+
+</body>
+</html>
